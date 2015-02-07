@@ -22,7 +22,7 @@ area(rectangle, Side1,Side2) when Side1 > 0 andalso Side2 > 0  ->
     Side1 * Side2;
 area(triangle,Side1,Side2) when Side1 > 0, Side2 > 0 ->
     (Side1*Side2) /2;
-area(elipse, MayorAxe,MinorAxe) when MayorAxe > 0, MinorAxe > 0 ->
+area(ellipse, MayorAxe,MinorAxe) when MayorAxe > 0, MinorAxe > 0 ->
     math:pi()*MayorAxe*MinorAxe;
 area(_,_,_) -> 0. 
 
