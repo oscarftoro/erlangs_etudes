@@ -43,16 +43,17 @@ julian(S) ->
 	false -> February = 28
     end,
     DaysPerMonth = [31, February, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-    julian(Y,M,D,DaysPerMonth,0).
--spec julian(integer(),integer(),integer(),[integer()],integer()) ->
+    julian(M,D,DaysPerMonth,0).
+
+-spec julian(integer(),integer(),[integer()],integer()) ->
 integer().
 
-julian(Y,M,D,L,Acc) when M > (13 - length(L)) ->
-    julian(Y,M,D,tl(L),Acc + hd(L));
-julian(Y,M,D,L,Acc) when M =:= (13 - length(L)) ->
+julian(M,D,L,Acc) when M > (13 - length(L)) ->
+    julian(M,D,tl(L),Acc + hd(L));
+julian(M,D,L,Acc) when M =:= (13 - length(L)) ->
     Acc + D.
 
-
+-spec is_leap_year(integer()) -> boolean().
 is_leap_year(Year) ->
     (Year rem 4 == 0 andalso Year rem 100/= 0) orelse (Year rem 400 == 0).
     
