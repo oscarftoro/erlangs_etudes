@@ -1,5 +1,5 @@
 -module(etude6).
--export([minimum/1,maximum/1]).
+-export([minimum/1,maximum/1,range/1]).
 
 -spec minimum([number()],[number()])-> number().
 minimum([],R) when R /= []->
@@ -30,6 +30,9 @@ maximum([H|T],R) when H > R ->
 maximum([_H|T],R) ->
     maximum(T,R).
 
+range(L) ->
+    [minimum(L),maximum(L)].
+    
     
     
     
