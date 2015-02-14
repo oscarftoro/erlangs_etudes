@@ -6,6 +6,7 @@
 alert(L)->
     alert(L,1,[]).
 
+-spec alert(list(),integer(),integer())->[integer()].
 
 alert([H|T],Cnt,Acc) ->
     case  lists:any((fun(X) -> X >= 4 end),H) of

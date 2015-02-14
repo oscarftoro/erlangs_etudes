@@ -2,6 +2,8 @@
 -export([minimum/1,maximum/1,range/1,julian/1]).
 -import(etude5_2,[date_parts/1]).
 
+%%Etudes 6_1 to 6_3
+
 -spec minimum([number()],[number()])-> number().
 minimum([],R) when R /= []->
     R;
